@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18362822034"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18362822034');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locação de Caçambas no Paraná | 3m³, 5m³ e 7m³</title>
@@ -1270,7 +1280,11 @@
     <script>
       function trackCtaClick(origin) {
         if (typeof window.gtag === 'function') {
-          window.gtag('event', 'click_whatsapp', { 'event_category': 'conversion', 'event_label': origin });
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-18362822034',
+            'event_category': 'whatsapp_click',
+            'event_label': origin
+          });
         }
         if (window.dataLayer && Array.isArray(window.dataLayer)) {
           window.dataLayer.push({ 'event': 'whatsapp_click', 'click_origin': origin });
