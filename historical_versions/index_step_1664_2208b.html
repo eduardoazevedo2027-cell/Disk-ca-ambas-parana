@@ -1,0 +1,55 @@
+import json
+import os
+
+log_fp = r'C:\Users\Pablo Tommas\.gemini\antigravity\brain\12001600-5ca5-422e-a66e-cec2e186f53c\.system_generated\logs\transcript_full.jsonl'
+output_fp = r'C:\Users\Pablo Tommas\.gemini\antigravity\scratch\cacamba-site\index_restored_full.html'
+
+print("=== EXTRACTING FULL UNTRUNCATED INDEX.HTML FROM CONVERSATION TRANSCRIPT ===")
+
+candidates = []
+
+with open(log_fp, encoding='utf-8', errors='ignore') as f:
+    for line_no, line in enumerate(f, 1):
+        if 'index.html' in line and '<!-- HERO SECTION' in line:
+            try:
+                data = json.loads(line)
+                # Check tool calls or content
+                content_str = json.dumps(data)
+                if 'id="como-funciona"' in content_str and 'id="cacambas"' in content_str and 'id="faq"' in content_str:
+                    candidates.append((line_no, len(content_str), data))
+            except Exception as e:
+                pass
+
+print(f"Found {len(candidates)} candidate logs containing full index.html!")
+
+# Sort by length descending to get the most complete view
+candidates.sort(key=lambda x: x[1], reverse=True)
+
+# Search in candidate tool_calls or content
+found_html = None
+for line_no, length, data in candidates:
+    # Recursively find large strings starting with <!DOCTYPE html>
+    def search_dict(obj):
+        global found_html
+        if isinstance(obj, str):
+            if '<!DOCTYPE html>' in obj and 'id="cacambas"' in obj and 'id="faq"' in obj:
+                if found_html is None or len(obj) > len(found_html):
+                    found_html = obj
+        elif isinstance(obj, dict):
+            for k, v in obj.items():
+                search_dict(v)
+        elif isinstance(obj, list):
+            for item in obj:
+                search_dict(item)
+
+    search_dict(data)
+
+if found_html:
+    print(f"SUCCESS: Extracted full index.html of size {len(found_html)} bytes!")
+    # Unescape escaped newlines if JSON encoded string
+    found_html = found_html.replace('\\n', '\n').replace('\\"', '"')
+    with open(output_fp, 'w', encoding='utf-8') as out:
+        out.write(found_html)
+    print(f"Saved to: {output_fp}")
+else:
+    print("No complete match found in direct search.")

@@ -1,0 +1,37 @@
+import os
+import re
+
+recovered_fp = r'C:\Users\Pablo Tommas\.gemini\antigravity\scratch\cacamba-site\index_RECOVERED.html'
+target_fp = r'C:\Users\Pablo Tommas\.gemini\antigravity\scratch\cacamba-site\index.html'
+
+raw_content = open(recovered_fp, encoding='utf-8', errors='ignore').read()
+
+print("=== VERIFYING RECOVERED HTML CONTENT & ALL SECTIONS ===")
+
+# Find start of <!DOCTYPE html> and ending </html>
+doc_start = raw_content.find('<!DOCTYPE html>')
+doc_end = raw_content.find('</html>', doc_start)
+
+if doc_start != -1 and doc_end != -1:
+    clean_html = raw_content[doc_start:doc_end+7]
+    
+    # Fix JSON escape sequences like \\n or \\" if present
+    clean_html = clean_html.replace('\\n', '\n').replace('\\"', '"').replace('\\\\', '\\')
+    
+    print(f"Extracted valid clean HTML document of {len(clean_html)} bytes!")
+    
+    # Check all key sections
+    sections = ['hero', 'como-funciona', 'cacambas', 'diferenciais', 'regioes', 'faq']
+    found_all = True
+    for s in sections:
+        present = s in clean_html or f'id="{s}"' in clean_html
+        print(f"  Section '{s}' present:", present)
+        if not present:
+            found_all = False
+            
+    if found_all:
+        with open(target_fp, 'w', encoding='utf-8') as out:
+            out.write(clean_html)
+        print("\n[SUCCESS] index.html successfully restored with ALL sections!")
+    else:
+        print("\n[WARNING] Some sections were missing in raw slice, searching for full blocks...")

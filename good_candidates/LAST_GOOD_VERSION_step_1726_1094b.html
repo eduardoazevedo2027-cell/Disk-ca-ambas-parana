@@ -1,0 +1,30 @@
+<!DOCTYPE html>` to see the scope of the problem.
+
+
+","tool_calls":[{"name":"write_to_file","args":{"CodeContent":"import json
+import os
+import re
+
+log_fp = r'C:\Users\Pablo Tommas\.gemini\antigravity\brain\12001600-5ca5-422e-a66e-cec2e186f53c\.system_generated\logs\transcript_full.jsonl'
+target_fp = r'C:\Users\Pablo Tommas\.gemini\antigravity\scratch\cacamba-site\index.html'
+
+print("=== UNESCAPING LOG LINES TO FIND PERFECT COMPLETE ORIGINAL INDEX.HTML ===")
+
+best_match = None
+max_score = -1
+
+with open(log_fp, encoding='utf-8', errors='ignore') as f:
+    for idx, raw_line in enumerate(f, 1):
+        if 'cacamba' in raw_line.lower() or 'gtag' in raw_line.lower():
+            # Unescape unicode and json escape sequences
+            line = raw_line.encode().decode('unicode_escape', errors='ignore')
+            line = line.replace('\
+', '
+').replace('\"', '"')
+            
+            pos = 0
+            while True:
+                doc_start = line.find('<!DOCTYPE html>', pos)
+                if doc_start == -1:
+                    break
+                doc_end = line.find('</html>
