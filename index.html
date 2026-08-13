@@ -275,10 +275,13 @@
             class="w-full h-full object-cover object-center" 
           />
         </picture>
-        <div class="absolute inset-0 bg-black/25 pointer-events-none"></div>
-        <!-- DIRECTIONAL GRADIENT: HEAVY DARK ON LEFT (TEXT), TRANSLUCENT ON RIGHT (IMAGE) -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-[#0C0C0C]/80 to-[#0C0C0C]/35"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/60"></div>
+        <!-- ZERO-COST ACCESSIBLE DARK OVERLAYS FOR CRISP MOBILE & DESKTOP LEGIBILITY -->
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        <!-- MOBILE TOP-TO-BOTTOM GRADIENT (HIGH CONTRAST UNDER TEXT & BULLETS) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-[#0C0C0C]/75 to-[#0C0C0C] pointer-events-none lg:hidden"></div>
+        <!-- DESKTOP LEFT-TO-RIGHT GRADIENT (HEAVY DARK ON TEXT LEFT, TRANSLUCENT RIGHT) -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-[#0C0C0C]/85 to-[#0C0C0C]/40 pointer-events-none hidden lg:block"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/70 pointer-events-none"></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -296,7 +299,7 @@
             </h1>
 
             <!-- SUBHEADLINE -->
-            <p class="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl">
+            <p class="text-base sm:text-lg text-zinc-100 font-medium leading-relaxed max-w-2xl drop-shadow-sm">
               Locação de caçambas para obras e reformas, com atendimento em Curitiba, Região Metropolitana e diversas cidades do Paraná.
             </p>
 
@@ -317,7 +320,7 @@
             </div>
 
             <!-- TRUST BULLETS -->
-            <div class="pt-4 border-t border-zinc-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm font-semibold text-zinc-300">
+            <div class="pt-4 border-t border-zinc-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm font-medium text-zinc-100">
               <div class="flex items-center space-x-2">
                 <span class="text-emerald-400 font-bold">✓</span>
                 <span>Entrega e retirada programadas</span>
