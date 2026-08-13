@@ -52,9 +52,9 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  
+  
 
   <!-- Schema.org Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -275,7 +275,22 @@
       
       <!-- HERO BACKGROUND OVERLAY (VIVID SCENE & PERFECT TEXT READABILITY) -->
       <div class="absolute inset-0 z-0 opacity-65">
-        <img src="assets/hero-bg.webp" alt="Obra de construção civil no Paraná" class="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.15]" />
+        <picture class="absolute inset-0 w-full h-full pointer-events-none">
+          <source media="(max-width: 640px)" srcset="assets/hero-bg-mobile.webp 640w" sizes="100vw" type="image/webp">
+          <img 
+            src="assets/hero-bg.webp" 
+            srcset="assets/hero-bg-mobile.webp 640w, assets/hero-bg.webp 1200w" 
+            sizes="100vw" 
+            alt="Obra de construção civil no Paraná" 
+            width="1200" 
+            height="675" 
+            fetchpriority="high" 
+            loading="eager" 
+            decoding="async" 
+            class="w-full h-full object-cover object-center" 
+          />
+        </picture>
+        <div class="absolute inset-0 bg-black/25 pointer-events-none"></div>
         <!-- DIRECTIONAL GRADIENT: HEAVY DARK ON LEFT (TEXT), TRANSLUCENT ON RIGHT (IMAGE) -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-[#0C0C0C]/80 to-[#0C0C0C]/35"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/60"></div>
@@ -424,7 +439,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-2">PROCESSO SIMPLES</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">PROCESSO SIMPLES</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">COMO FUNCIONA A LOCAÇÃO</h2>
           <p class="text-slate-600 text-base mt-3">Processo ágil e transparente do pedido até o recolhimento da caçamba na sua obra.</p>
         </div>
@@ -435,7 +450,7 @@
           <!-- STEP 1 -->
           <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm relative group space-y-3">
             <div class="flex items-baseline space-x-3 mb-2">
-              <span class="text-3xl font-black text-orange-600">01</span>
+              <span class="text-3xl font-black text-amber-700">01</span>
               <h3 class="text-lg font-bold text-slate-900">Peça o orçamento</h3>
             </div>
             <p class="text-slate-600 text-sm leading-relaxed">
@@ -446,7 +461,7 @@
           <!-- STEP 2 -->
           <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm relative group space-y-3">
             <div class="flex items-baseline space-x-3 mb-2">
-              <span class="text-3xl font-black text-orange-600">02</span>
+              <span class="text-3xl font-black text-amber-700">02</span>
               <h3 class="text-lg font-bold text-slate-900">Agendamos a entrega</h3>
             </div>
             <p class="text-slate-600 text-sm leading-relaxed">
@@ -457,7 +472,7 @@
           <!-- STEP 3 -->
           <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm relative group space-y-3">
             <div class="flex items-baseline space-x-3 mb-2">
-              <span class="text-3xl font-black text-orange-600">03</span>
+              <span class="text-3xl font-black text-amber-700">03</span>
               <h3 class="text-lg font-bold text-slate-900">Utilize a caçamba</h3>
             </div>
             <p class="text-slate-600 text-sm leading-relaxed">
@@ -468,7 +483,7 @@
           <!-- STEP 4 -->
           <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm relative group space-y-3">
             <div class="flex items-baseline space-x-3 mb-2">
-              <span class="text-3xl font-black text-orange-600">04</span>
+              <span class="text-3xl font-black text-amber-700">04</span>
               <h3 class="text-lg font-bold text-slate-900">Retirada e destinação</h3>
             </div>
             <p class="text-slate-600 text-sm leading-relaxed">
@@ -696,7 +711,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-2">SOLUÇÕES PARA SUA OBRA</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">SOLUÇÕES PARA SUA OBRA</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">CAÇAMBAS PARA DIFERENTES NECESSIDADES</h2>
           <p class="text-slate-600 text-base mt-3">Soluções para diferentes tipos de obras, reformas e volumes de resíduos.</p>
         </div>
@@ -704,7 +719,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm space-y-4 hover:border-orange-500/50 hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-600">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-amber-700">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
             </div>
             <h3 class="text-lg font-bold text-slate-900 uppercase tracking-tight">REFORMAS RESIDENCIAIS</h3>
@@ -714,7 +729,7 @@
           </div>
 
           <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm space-y-4 hover:border-orange-500/50 hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-600">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-amber-700">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
             </div>
             <h3 class="text-lg font-bold text-slate-900 uppercase tracking-tight">CONSTRUÇÃO E DEMOLIÇÃO</h3>
@@ -724,7 +739,7 @@
           </div>
 
           <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm space-y-4 hover:border-orange-500/50 hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-600">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-amber-700">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <h3 class="text-lg font-bold text-slate-900 uppercase tracking-tight">LIMPEZA DE TERRENO</h3>
@@ -734,7 +749,7 @@
           </div>
 
           <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm space-y-4 hover:border-orange-500/50 hover:shadow-md transition-all">
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-600">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-amber-700">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
             </div>
             <h3 class="text-lg font-bold text-slate-900 uppercase tracking-tight">OBRAS COMERCIAIS</h3>
@@ -869,7 +884,7 @@
           <!-- LEFT CITIES GROUPED (7 COLS) -->
           <div class="lg:col-span-7 space-y-7">
             <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-1">REGIÕES ATENDIDAS</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-1">REGIÕES ATENDIDAS</span>
               <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 LOCAÇÃO DE CAÇAMBAS EM CURITIBA, RMC E INTERIOR DO PARANÁ
               </h2>
@@ -884,7 +899,7 @@
               
               <!-- GROUP 1: CURITIBA E RMC -->
               <div class="bg-white border border-slate-200/90 p-5 rounded-xl space-y-3 shadow-sm">
-                <span class="text-xs font-bold uppercase tracking-wider text-orange-600 block">Região de Curitiba e RMC</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-700 block">Região de Curitiba e RMC</span>
                 <div class="flex flex-wrap gap-2">
                   <span class="bg-slate-100 border border-slate-200 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 hover:border-orange-500 transition-colors">
                     <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Curitiba
@@ -979,7 +994,22 @@
           <div class="lg:col-span-5">
             <div class="bg-[#0C0C0C] border border-zinc-800/90 p-6 rounded-2xl">
               <div class="w-full h-44 rounded-xl overflow-hidden mb-5 border border-zinc-800/80">
-                <img src="assets/hero-bg.webp" alt="Base operacional de caçambas na Cidade Industrial em Curitiba" class="w-full h-full object-cover" />
+                <picture class="absolute inset-0 w-full h-full pointer-events-none">
+          <source media="(max-width: 640px)" srcset="assets/hero-bg-mobile.webp 640w" sizes="100vw" type="image/webp">
+          <img 
+            src="assets/hero-bg.webp" 
+            srcset="assets/hero-bg-mobile.webp 640w, assets/hero-bg.webp 1200w" 
+            sizes="100vw" 
+            alt="Obra de construção civil no Paraná" 
+            width="1200" 
+            height="675" 
+            fetchpriority="high" 
+            loading="eager" 
+            decoding="async" 
+            class="w-full h-full object-cover object-center" 
+          />
+        </picture>
+        <div class="absolute inset-0 bg-black/25 pointer-events-none"></div>
               </div>
               <h3 class="text-lg font-bold text-white mb-2">BASE EM CURITIBA — CIDADE INDUSTRIAL</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-4">
@@ -1052,7 +1082,7 @@
     <section class="py-16 lg:py-24 bg-[#F8FAFC] border-t border-slate-200/80">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-2">ATENDIMENTO PARA OBRAS E REFORMAS</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">ATENDIMENTO PARA OBRAS E REFORMAS</span>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
             LOCAÇÃO DE CAÇAMBAS DE ENTULHO NO PARANÁ
           </h2>
@@ -1077,7 +1107,7 @@
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center mb-14">
-          <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-2">TIRA-DÚVIDAS</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 block mb-2">TIRA-DÚVIDAS</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">PERGUNTAS FREQUENTES</h2>
           <p class="text-slate-600 text-base mt-3">Respostas para as principais dúvidas antes de solicitar a sua caçamba.</p>
         </div>
@@ -1087,7 +1117,7 @@
           <details class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm group transition-all">
             <summary class="font-bold text-slate-900 text-base cursor-pointer list-none flex justify-between items-center select-none">
               <span>Vocês atendem minha cidade no Paraná?</span>
-              <span class="text-orange-600 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+              <span class="text-amber-700 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
             <p class="text-slate-600 text-sm mt-3 pt-3 border-t border-slate-200/80 leading-relaxed">
               Atendemos Curitiba, Região Metropolitana e diferentes cidades do interior do Paraná. Consulte sua cidade pelo WhatsApp para confirmar disponibilidade.
@@ -1097,7 +1127,7 @@
           <details class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm group transition-all">
             <summary class="font-bold text-slate-900 text-base cursor-pointer list-none flex justify-between items-center select-none">
               <span>Quanto tempo posso permanecer com a caçamba?</span>
-              <span class="text-orange-600 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+              <span class="text-amber-700 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
             <p class="text-slate-600 text-sm mt-3 pt-3 border-t border-slate-200/80 leading-relaxed">
               O período padrão informado no serviço é de 3 a 5 dias úteis. As condições podem variar conforme cidade, local de instalação e atendimento contratado.
@@ -1107,7 +1137,7 @@
           <details class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm group transition-all">
             <summary class="font-bold text-slate-900 text-base cursor-pointer list-none flex justify-between items-center select-none">
               <span>Quais resíduos podem ser colocados na caçamba?</span>
-              <span class="text-orange-600 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+              <span class="text-amber-700 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
             <p class="text-slate-600 text-sm mt-3 pt-3 border-t border-slate-200/80 leading-relaxed">
               Em geral, as caçambas são utilizadas para resíduos de construção e reforma, como concreto, tijolos, cerâmica, argamassa e materiais semelhantes. Resíduos perigosos, químicos, hospitalares e materiais especiais exigem consulta prévia.
@@ -1117,7 +1147,7 @@
           <details class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm group transition-all">
             <summary class="font-bold text-slate-900 text-base cursor-pointer list-none flex justify-between items-center select-none">
               <span>O valor muda conforme a cidade?</span>
-              <span class="text-orange-600 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+              <span class="text-amber-700 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
             <p class="text-slate-600 text-sm mt-3 pt-3 border-t border-slate-200/80 leading-relaxed">
               Sim. O valor pode variar conforme tamanho da caçamba, cidade, distância, tipo de resíduo e disponibilidade.
@@ -1127,7 +1157,7 @@
           <details class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-sm group transition-all">
             <summary class="font-bold text-slate-900 text-base cursor-pointer list-none flex justify-between items-center select-none">
               <span>Quais tamanhos estão disponíveis?</span>
-              <span class="text-orange-600 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+              <span class="text-amber-700 font-bold text-xl transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
             <p class="text-slate-600 text-sm mt-3 pt-3 border-t border-slate-200/80 leading-relaxed">
               O site apresenta opções de 3 m³, 5 m³ e 7 m³ para diferentes volumes e tipos de obra.
