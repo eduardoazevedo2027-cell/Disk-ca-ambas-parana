@@ -272,7 +272,10 @@
       
       <!-- HERO BACKGROUND OVERLAY (VIVID SCENE & PERFECT TEXT READABILITY) -->
       <div class="absolute inset-0 z-0 opacity-65">
-        <img src="assets/hero-bg.webp" alt="Obra de construção civil no Paraná" class="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.15]" />
+        <picture class="contents">
+    <source media="(max-width: 640px)" srcset="assets/hero-bg-mobile.webp" type="image/webp">
+    <img src="assets/hero-bg.webp" alt="Obra de construção civil no Paraná" class="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.15]" />
+  </picture>
         <!-- DIRECTIONAL GRADIENT: HEAVY DARK ON LEFT (TEXT), TRANSLUCENT ON RIGHT (IMAGE) -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-[#0C0C0C]/80 to-[#0C0C0C]/35"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/60"></div>
@@ -335,10 +338,13 @@
           <div class="lg:col-span-5">
             <div class="bg-[#141414] border border-zinc-800/90 rounded-2xl p-3 shadow-2xl relative img-zoom-container">
               <div class="relative w-full h-[340px] sm:h-[400px] rounded-xl overflow-hidden border border-zinc-800/80">
-                <img src="assets/hero-main-visual.webp" 
+                <picture class="contents">
+    <source media="(max-width: 640px)" srcset="assets/hero-main-visual-mobile.webp" type="image/webp">
+    <img src="assets/hero-main-visual.webp" 
                      alt="Caminhão poliguindaste transportando caçamba para obra no Paraná" 
                      class="w-full h-full object-cover object-center img-zoom" 
                      width="800" height="600" fetchpriority="high" decoding="async" />
+  </picture>
                 
                 <!-- GRADIENT OVERLAY -->
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80"></div>
@@ -483,10 +489,13 @@
           <div class="bg-[#0C0C0C] rounded-2xl overflow-hidden border border-zinc-800/90 shadow-xl flex flex-col justify-between img-zoom-container transition-all">
             <div>
               <div class="h-52 relative overflow-hidden border-b border-zinc-800/80">
-                <img src="assets/cacamba-3m-pequena.webp" loading="lazy" decoding="async" 
+                <picture class="contents">
+    <source media="(max-width: 640px)" srcset="assets/cacamba-3m-pequena-mobile.webp" type="image/webp">
+    <img src="assets/cacamba-3m-pequena.webp" loading="lazy" decoding="async" 
                      alt="Caçamba estacionária pequena de 3 metros cúbicos" 
                      class="w-full h-full object-cover object-center img-zoom" 
                      width="600" height="400" loading="lazy" decoding="async" />
+  </picture>
                 <div class="absolute bottom-3 left-3 bg-[#0C0C0C]/90 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-md border border-zinc-800">
                   3 m³
                 </div>
@@ -538,10 +547,13 @@
             
             <div>
               <div class="h-52 relative overflow-hidden border-b border-zinc-800/80">
-                <img src="assets/cacamba-5m-media.webp" loading="lazy" decoding="async" 
+                <picture class="contents">
+    <source media="(max-width: 640px)" srcset="assets/cacamba-5m-media-mobile.webp" type="image/webp">
+    <img src="assets/cacamba-5m-media.webp" loading="lazy" decoding="async" 
                      alt="Caçamba estacionária de 5 metros cúbicos para reforma" 
                      class="w-full h-full object-cover object-center img-zoom" 
                      width="600" height="400" loading="lazy" decoding="async" />
+  </picture>
                 <div class="absolute bottom-3 left-3 bg-orange-500 text-zinc-950 text-xs font-black px-3 py-1 rounded-md">
                   5 m³
                 </div>
@@ -925,7 +937,10 @@
           <div class="lg:col-span-5">
             <div class="bg-[#0C0C0C] border border-zinc-800/90 p-6 rounded-2xl">
               <div class="w-full h-44 rounded-xl overflow-hidden mb-5 border border-zinc-800/80">
-                <img src="assets/hero-bg.webp" alt="Base operacional de caçambas na Cidade Industrial em Curitiba" class="w-full h-full object-cover" />
+                <picture class="contents">
+    <source media="(max-width: 640px)" srcset="assets/hero-bg-mobile.webp" type="image/webp">
+    <img src="assets/hero-bg.webp" alt="Base operacional de caçambas na Cidade Industrial em Curitiba" class="w-full h-full object-cover" />
+  </picture>
               </div>
               <h3 class="text-lg font-bold text-white mb-2">BASE EM CURITIBA — CIDADE INDUSTRIAL</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-4">
