@@ -190,7 +190,9 @@
       }
     }
   </style>
-  </head>
+    <link rel="preload" as="image" href="assets/hero-bg-mobile.webp" media="(max-width: 640px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-bg.webp" media="(min-width: 641px)" fetchpriority="high">
+</head>
 <body class="bg-[#0C0C0C] text-zinc-100 antialiased selection:bg-orange-500 selection:text-white flex flex-col min-h-screen">
 
   <!-- SKIP TO CONTENT LINK (ACCESSIBILITY WCAG AA) -->
